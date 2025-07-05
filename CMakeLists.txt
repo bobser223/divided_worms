@@ -8,6 +8,6 @@ add_executable(divided_worms main.cpp
         structures/Coordinate.cpp
         structures/Coordinate.h
         physics/PhysicsEngine.cpp
-        physics/Vec2.cpp
-        physics/Vec2.h
+        structures/Vec2.cpp
+        structures/Vec2.h
 )
