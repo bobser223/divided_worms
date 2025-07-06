@@ -8,7 +8,7 @@
 
 std::vector<Coordinate>
 PhysicsEngine::count_ballistics(Coordinate &start, Coordinate &initVelocity, gravity_t gravity, time_step_t timeStep,
-                               size_t maxSteps) {
+                               size_t maxSteps) const {
     std::vector<Coordinate> path;
     path.reserve(maxSteps+1);
 

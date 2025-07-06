@@ -48,6 +48,6 @@ public:
             gravity_t gravity = 9.81,
             time_step_t timeStep = 0.02,
             size_t maxSteps  = 500
-            );
+            ) const;
 
 };
