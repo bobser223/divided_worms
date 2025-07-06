@@ -7,34 +7,18 @@
 #define DIVIDED_WORMS_MAP_H
 
 
+#pragma once
+
 #include <iostream>
 
+using map_value_t = int;
 
-const long long MAP_HEIGHT = 10;
-const long long MAP_WIDTH  = 20;
+const size_t MAP_HEIGHT = 10;
+const size_t MAP_WIDTH  = 20;
 
 // 0 = порожнє (повітря), 1 = земля
-const int gameMap[MAP_HEIGHT][MAP_WIDTH] = {
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0},
-        {0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0},
-        {0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0},
-        {0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0},
-        {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-};
+extern map_value_t gameMap[MAP_HEIGHT][MAP_WIDTH];
 
-void drawMap() {
-    for (const auto & y : gameMap) {
-        for (int x : y) {
-            std::cout << (x ? '#' : ' ');
-        }
-        std::cout << '\n';
-    }
-}
 
 
 

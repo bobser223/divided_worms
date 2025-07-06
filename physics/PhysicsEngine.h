@@ -6,6 +6,7 @@
 
 #include "../structures/Coordinate.h"
 #include "../structures/Vec2.h"
+#include "../map/map.h"
 
 #ifndef DIVIDED_WORMS_PHYSICS_ENGINE_H
 #define DIVIDED_WORMS_PHYSICS_ENGINE_H
@@ -47,8 +48,8 @@ public:
     /// @param maxSteps      Hard cap on number of samples to avoid infinite loops.
     /// @returns             Sequence of positions until it hits y≤0 or maxSteps.
     std::vector<Coordinate> count_ballistics(
-            Coordinate& start,
-            Coordinate& initVelocity,
+            const Coordinate& start,
+            const Coordinate& initVelocity,
             gravity_t gravity = 9.81,
             time_step_t timeStep = 0.02,
             size_t maxSteps  = 500

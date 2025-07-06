@@ -7,8 +7,13 @@
 
 
 std::vector<Coordinate>
-PhysicsEngine::count_ballistics(Coordinate &start, Coordinate &initVelocity, gravity_t gravity, time_step_t timeStep,
-                               size_t maxSteps) const {
+PhysicsEngine::count_ballistics(
+        const Coordinate &start,
+        const Coordinate &initVelocity,
+        gravity_t gravity,
+        time_step_t timeStep,
+        size_t maxSteps) const {
+
     std::vector<Coordinate> path;
     path.reserve(maxSteps+1);
 
@@ -24,6 +29,12 @@ PhysicsEngine::count_ballistics(Coordinate &start, Coordinate &initVelocity, gra
         vel.y += accel.y * timeStep;
         pos.x += vel.x * timeStep;
         pos.y += vel.y * timeStep;
+
+        if (gameMap[static_cast<map_value_t>(pos.y)][static_cast<map_value_t>(pos.x)] == 1) // hit ground
+            break;
+
+
+
 
         if (pos.y <= 0.0)  // hit ground
             break;

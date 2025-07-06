@@ -11,4 +11,5 @@ add_executable(divided_worms main.cpp
         structures/Vec2.cpp
         structures/Vec2.h
         map/map.h
+        map/map.cpp
 )
