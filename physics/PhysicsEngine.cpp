@@ -4,15 +4,7 @@
 #include "PhysicsEngine.h"
 
 
-std::vector<Coordinate> count_balistics(
-        Coordinate& start,
-        Coordinate& initVelocity,
-        gravity_t gravity = 9.81,
-        time_step_t timeStep = 0.02,
-        size_t maxSteps  = 500
-){
 
-}
 
 std::vector<Coordinate>
 PhysicsEngine::count_ballistics(Coordinate &start, Coordinate &initVelocity, gravity_t gravity, time_step_t timeStep,
@@ -20,12 +12,12 @@ PhysicsEngine::count_ballistics(Coordinate &start, Coordinate &initVelocity, gra
     std::vector<Coordinate> path;
     path.reserve(maxSteps+1);
 
-    Vec2 pos = { start.x, start.y };
-    Vec2 vel = { initVelocity.x, initVelocity.y };
+    Vec2 pos = { static_cast<Vec2_value_t>(start.x), static_cast<Vec2_value_t>(start.y) };
+    Vec2 vel = { static_cast<Vec2_value_t>(initVelocity.x), static_cast<Vec2_value_t>(initVelocity.y) };
     Vec2 accel = { double(wind_), -gravity };
 
     for (size_t i = 0; i < maxSteps; ++i) {
-        path.push_back({ pos.x, pos.y });
+        path.emplace_back( static_cast<coordinate_value_t>(pos.x), static_cast<coordinate_value_t>(pos.y) );
 
         // Euler integration
         vel.x += accel.x * timeStep;

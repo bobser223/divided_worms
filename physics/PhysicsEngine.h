@@ -31,7 +31,7 @@ public:
     }
 
 
-    wind_t get_wind(){
+    [[nodiscard]] wind_t get_wind() const{
         return wind_;
     }
 

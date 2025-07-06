@@ -7,13 +7,13 @@
 
 using coordinate_value_t = long long;
 
-class Coordinate {
-private:
+struct Coordinate {
+
     coordinate_value_t  x, y;
-public:
+
     Coordinate(coordinate_value_t _x, coordinate_value_t _y): x(_x), y(_y) {};
 
-    void operator=(Coordinate& other){
+    void operator=(const Coordinate& other){
         this->x = other.x;
         this->y = other.y;
     }
