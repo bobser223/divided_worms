@@ -10,4 +10,5 @@ add_executable(divided_worms main.cpp
         physics/PhysicsEngine.cpp
         structures/Vec2.cpp
         structures/Vec2.h
+        map/map.h
 )

@@ -23,6 +23,10 @@ private:
     wind_t wind_;
 
 public:
+    explicit PhysicsEngine(wind_t _wind=0): wind_(_wind) {}
+
+    ~PhysicsEngine() = default;
+
 
     exit_code_t set_wind(wind_t value){
 
