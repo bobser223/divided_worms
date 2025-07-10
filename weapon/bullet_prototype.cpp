@@ -6,15 +6,17 @@
 #include <string>
 #include <chrono>
 #include <thread>
-using namespace std;
+
+
+using namespace std; // TODO: remove this and use manual namespaces like std::something
 
 vector<string> weapons{"rocket_launcher", "shotgun", "uzi"};
 
 
-class Bullet(vector<pair> trajectory)
+class Bullet(vector<pair> trajectory) // TODO: make this class virtual and all the methods also;
 private:
     string type;
-    int damage;
+    int damage; // TODO: make something like using damage_t = int;
     string shape;
     int recoil;
     int position;
