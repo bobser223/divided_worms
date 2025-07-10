@@ -4,7 +4,7 @@
 
 #include <vector>
 
-#include "../weapon/bullet_prototype.h"
+#include "../weapon/weapon.h"
 
 using hp_t = short;
 

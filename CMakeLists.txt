@@ -16,7 +16,7 @@ add_executable(divided_worms main.cpp
         include/creature/creature.h
         src/creature/Creature.cpp
         include/creature/Creature.h
-        include/weapon/bullet_prototype.h
+        include/weapon/weapon.h
         config/Defines.h
         config/Settings.h
         src/drop/Drop.cpp
