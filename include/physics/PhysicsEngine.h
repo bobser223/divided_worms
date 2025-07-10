@@ -4,9 +4,10 @@
 
 #include <vector>
 
-#include "../structures/Coordinate.h"
-#include "../structures/Vec2.h"
+#include "../../structures/Coordinate.h"
+#include "../../structures/Vec2.h"
 #include "../map/map.h"
+#include "../../global_values/defines.h"
 
 #ifndef DIVIDED_WORMS_PHYSICS_ENGINE_H
 #define DIVIDED_WORMS_PHYSICS_ENGINE_H
@@ -14,7 +15,6 @@
 #endif //DIVIDED_WORMS_PHYSICS_ENGINE_H
 
 using wind_t = long long;
-using exit_code_t = short;
 using gravity_t = double;
 using time_step_t = double;
 

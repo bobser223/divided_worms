@@ -2,7 +2,7 @@
 // Created by Volodymyr Avvakumov on 06.07.2025.
 //
 
-#include "map.h"
+#include "../../include/map/map.h"
 
 
 map_value_t gameMap[MAP_HEIGHT][MAP_WIDTH] = {

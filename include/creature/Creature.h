@@ -6,12 +6,20 @@
 
 #include "../weapon/bullet_prototype.h"
 
+using hp_t = short;
+
 #ifndef DIVIDED_WORMS_CREATURE_H
 #define DIVIDED_WORMS_CREATURE_H
 
 
+
+
 class Creature {
-    std::vector<bullet_prototype>
+private:
+    std::vector<bullet_prototype> _avalible_veapons;
+    hp_t _hp;
+public:
+
 };
 
 
