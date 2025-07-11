@@ -6,6 +6,7 @@
 
 #include "../weapon/weapon.h"
 
+
 using hp_t = short;
 
 #ifndef DIVIDED_WORMS_CREATURE_H
@@ -16,7 +17,7 @@ using hp_t = short;
 
 class Creature {
 private:
-    std::vector<bullet_prototype> _avalible_veapons;
+//    std::vector<bullet_prototype> _avalible_weapons;
     hp_t _hp;
 public:
 

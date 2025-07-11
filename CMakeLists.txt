@@ -1,24 +1,23 @@
-cmake_minimum_required(VERSION 3.31)
-project(divided_worms)
+cmake_minimum_required(VERSION 3.16)
+project(divided_worms VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_executable(divided_worms main.cpp
-        include/physics/PhysicsEngine.h
-        src/structures/Coordinate.cpp
-        include/structures/Coordinate.h
-        src/physics/PhysicsEngine.cpp
-        src/structures/Vec2.cpp
-        include/structures/Vec2.h
-        include/map/map.h
-        src/map/map.cpp
-        src/creature/Creature.cpp
-        include/creature/creature.h
-        src/creature/Creature.cpp
-        include/creature/Creature.h
-        include/weapon/weapon.h
-        config/Defines.h
-        config/Settings.h
-        src/drop/Drop.cpp
-        include/drop/Drop.h
+# Expose headers in include/
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
+# Recursively collect all .cpp files in src/
+file(GLOB_RECURSE SRC_FILES
+        "${CMAKE_SOURCE_DIR}/src/*.cpp"
+)
+
+# Add executable
+add_executable(${PROJECT_NAME} ${SRC_FILES} main.cpp)
+
+# If you have config headers to install or generate:
+target_include_directories(${PROJECT_NAME} PRIVATE
+        ${CMAKE_SOURCE_DIR}/config
+>>>>>>> 12bae4e (cmake changes)
 )

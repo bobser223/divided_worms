@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "physics/PhysicsEngine.h"
-#include "map/map.h"
+#include "include/physics/PhysicsEngine.h"
+#include "include/map/map.h"
 
 void drawMap() {
     for (const auto & y : gameMap) {

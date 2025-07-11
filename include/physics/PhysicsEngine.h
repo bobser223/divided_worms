@@ -4,10 +4,10 @@
 
 #include <vector>
 
-#include "../../structures/Coordinate.h"
-#include "../../structures/Vec2.h"
+#include "../../include/structures/Coordinate.h"
+#include "../../include/structures/Vec2.h"
 #include "../map/map.h"
-#include "../../global_values/defines.h"
+#include "../../config/Defines.h"
 
 #ifndef DIVIDED_WORMS_PHYSICS_ENGINE_H
 #define DIVIDED_WORMS_PHYSICS_ENGINE_H
