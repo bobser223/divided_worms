@@ -95,6 +95,11 @@ class Bullet
         // TODO: make observer
     }
 
+    bool danger_checker()
+    {
+
+    }
+
     void change_position(){
         const auto delay = chrono::milliseconds(time);
 
@@ -102,8 +107,7 @@ class Bullet
 
             this_thread::sleep_for(delay);
             current_position = trajectory[i];
-            if(map_value_t gameMap[current_position
-                ][1] )
+            if(danger_checker())
             {
                 notifier();
                 // TODO: we have no worm yet
