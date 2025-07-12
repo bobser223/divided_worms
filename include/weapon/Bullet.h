@@ -1,6 +1,4 @@
-//
 // Created by Volodymyr Avvakumov on 10.07.2025.
-//
 
 #ifndef DIVIDED_WORMS_BULLET_PROTOTYPE_H
 #define DIVIDED_WORMS_BULLET_PROTOTYPE_H
@@ -15,59 +13,56 @@
 
 #include "../../include/map/map.h"
 
-extern const float epsilon = 0.001;
+extern const float epsilon = 0.001f;
 
 
-using namespace std; // TODO: remove this and use manual namespaces like std::something
 
-vector<string> weapons{"rocket_launcher", "shotgun", "uzi"};
-
+static std::vector<std::string> weapons{"rocket_launcher", "shotgun", "uzi"};
 
 class Bullet
 {
 
 private:
-    string type;
-    int maximal_damage; // TODO: make something like using damage_t = int;
-    string shape;
-    int recoil;
-    int time;
-    float speed;
+    std::string type;
+    static int maximal_damage; // TODO: make something like using damage_t = int;
+    std::string shape;
+    static int recoil;
+    static int time;
+    static float speed;
 
 public:
-    vector<pair<float, float>> trajectory;
-    pair<float, float> current_position;
+    std::vector<std::pair<float, float>> trajectory;
+    std::pair<float, float> current_position;
 
-    void set_type(string& type)
+    void set_type(const std::string& type)
     {
         this->type = type;
     }
 
     void set_damage(int damage)
     {
-        this->maximal_damage = damage;
+        maximal_damage = damage;
     }
 
-    void set_shape(string& shape)
+    void set_shape(const std::string& shape)
     {
-        this->shape = std::move(shape);
+        this->shape = shape;
     }
 
-    void set_shape(std::string&& shape){
+    void set_shape(std::string&& shape)
+    {
         this->shape = std::move(shape);
     }
 
     void set_recoil(int recoil)
     {
-        this->recoil = recoil;
+        Bullet::recoil = recoil;
     }
 
     void set_time(int time)
     {
-        this->time = time;
+        Bullet::time = time;
     }
-
-
 
     const std::string& get_type() const
     {
@@ -101,24 +96,11 @@ public:
 
     bool danger_checker()
     {
-
+        // TODO: implement
+        return false;
     }
 
-    void change_position(){
-        const auto delay = chrono::milliseconds(time);
-
-        for (int i = 0; i < trajectory.size(); ++i) {
-
-            this_thread::sleep_for(delay);
-            current_position = trajectory[i];
-            if(danger_checker())
-            {
-                notifier();
-                // TODO: we have no worm yet
-            }
-        }
-
-    }
+    void change_position();
 
     void visual_change_position(){}
 };

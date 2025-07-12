@@ -1,17 +1,18 @@
-//
-// Created by bylin on 07.07.2025.
-//
 
-#include "../../include/weapon/weapon.h"
+#ifndef DIVIDED_WORMS_WEAPON_H
+#define DIVIDED_WORMS_BULLET_PROTOTYPE_H
+
+#include "Bullet.h"
 
 #include "../../include/physics/PhysicsEngine.h"
 
-gravity_t gravity = 9.81;
+
+extern gravity_t gravity = 9.81;
 
 class Weapon
 {
-    private:
-    public:
+private:
+public:
     int wind; // from -4 to 4
 
     void set_start()
@@ -30,18 +31,15 @@ class Weapon
     }
 
 
-    void rocket_launcher()
-    {
-
-        Bullet rocket_launcher;
-        rocket_launcher.set_damage(60);
-        rocket_launcher.set_recoil(10);
-        rocket_launcher.set_shape("standard_bullet");
-        rocket_launcher.set_time(1);
-        set_start();
-
-
-    }
+    void rocket_launcher();
 
 
 };
+
+
+
+
+
+
+
+#endif //DIVIDED_WORMS_WEAPON_H

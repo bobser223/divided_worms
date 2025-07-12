@@ -30,7 +30,7 @@ PhysicsEngine::count_ballistics(
         pos.x += vel.x * timeStep;
         pos.y += vel.y * timeStep;
 
-        if (gameMap[static_cast<map_value_t>(pos.y)][static_cast<map_value_t>(pos.x)] == 1) // hit ground
+        if (gameMap[static_cast<map_value_t>(pos.y)][static_cast<map_value_t>(pos.x)] != 1) // hit ground or a worm
             break;
 
 
