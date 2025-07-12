@@ -4,7 +4,7 @@
 
 #include "../../include/weapon/weapon.h"
 
-#include "PhysicsEngine.h"
+#include "../../include/physics/PhysicsEngine.h"
 
 gravity_t gravity = 9.81;
 
@@ -36,7 +36,7 @@ class Weapon
         Bullet rocket_launcher;
         rocket_launcher.set_damage(60);
         rocket_launcher.set_recoil(10);
-        rocket_launcher.set_shape('standard_bullet');
+        rocket_launcher.set_shape("standard_bullet");
         rocket_launcher.set_time(1);
         set_start();
 

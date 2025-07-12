@@ -13,9 +13,9 @@
 
 #include <map>
 
-#include "map.h"
+#include "../../include/map/map.h"
 
-float epsilon = 0.001;
+extern const float epsilon = 0.001;
 
 
 using namespace std; // TODO: remove this and use manual namespaces like std::something
@@ -26,7 +26,7 @@ vector<string> weapons{"rocket_launcher", "shotgun", "uzi"};
 class Bullet
 {
 
-    private:
+private:
     string type;
     int maximal_damage; // TODO: make something like using damage_t = int;
     string shape;
@@ -34,7 +34,7 @@ class Bullet
     int time;
     float speed;
 
-    public:
+public:
     vector<pair<float, float>> trajectory;
     pair<float, float> current_position;
 
@@ -50,7 +50,11 @@ class Bullet
 
     void set_shape(string& shape)
     {
-        this->shape = shape;
+        this->shape = std::move(shape);
+    }
+
+    void set_shape(std::string&& shape){
+        this->shape = std::move(shape);
     }
 
     void set_recoil(int recoil)

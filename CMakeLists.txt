@@ -19,5 +19,4 @@ add_executable(${PROJECT_NAME} ${SRC_FILES} main.cpp)
 # If you have config headers to install or generate:
 target_include_directories(${PROJECT_NAME} PRIVATE
         ${CMAKE_SOURCE_DIR}/config
->>>>>>> 12bae4e (cmake changes)
 )
