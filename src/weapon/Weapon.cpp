@@ -1,5 +1,6 @@
 
-#include <Weapon.h>
+#include "../../include/weapon/Weapon.h"
+#include "weapon/Bullet.h"
 
 void Weapon::rocket_launcher()
 {

@@ -8,10 +8,24 @@
 #include <string>
 #include <chrono>
 #include <thread>
-
 #include <map>
+#include <queue>
+#include <array>
+#include <utility>
 
+
+#include "../../config/Defines.h"
 #include "../../include/map/map.h"
+#include "../../include/structures/Coordinate.h"
+#include "../../include/algorithms/Distance.h"
+
+static constexpr std::array<std::pair<coordinate_value_t , coordinate_value_t>,4> DIRECTIONS {{
+                                                                      { 1,  0},
+                                                                      { 0,  1},
+                                                                      {-1,  0},
+                                                                      { 0, -1}
+                                                              }};
+static constexpr size_t DIRECTIONS_SIZE = DIRECTIONS.size();
 
 extern const float epsilon = 0.001f;
 
@@ -33,6 +47,8 @@ private:
 public:
     std::vector<std::pair<float, float>> trajectory;
     std::pair<float, float> current_position;
+
+    Bullet() = default;
 
     void set_type(const std::string& type)
     {
@@ -103,6 +119,8 @@ public:
     void change_position();
 
     void visual_change_position(){}
+
+    exit_code_t explode(const Coordinate& hit_point); // TODO: make damage to a worm
 };
 
 #endif //DIVIDED_WORMS_BULLET_PROTOTYPE_H

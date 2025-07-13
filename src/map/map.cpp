@@ -32,3 +32,7 @@ map_durability_t durabilityMap[MAP_HEIGHT][MAP_WIDTH] = {
 };
 
 
+void destroy_map_cell(const Coordinate& position){
+    gameMap[position.y][position.x] = AIR;
+}
+
