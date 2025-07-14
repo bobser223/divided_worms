@@ -19,6 +19,11 @@ void Bullet::change_position()
 }
 
 exit_code_t Bullet::explode(const Coordinate& hit_point) {
+    if (hit_point.x < 0 || hit_point.x >= MAP_WIDTH || hit_point.y < 0 || hit_point.y >= MAP_HEIGHT)
+        return OUT_OF_RANGE_ERROR;
+
+
+
     //                   coordinate, damage impuls
     std::queue<std::pair<Coordinate, int>> q;
     q.push({hit_point, recoil});
@@ -68,5 +73,5 @@ exit_code_t Bullet::explode(const Coordinate& hit_point) {
         }
     }
     
-    return 1; // all ok
+    return OK;
 }
