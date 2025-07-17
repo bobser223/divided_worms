@@ -15,23 +15,7 @@
 
 
 class Logger {
-private:
-    std::string _filename;
-    FILE* _file;
 
-
-    enum Level {DEBUG, INFO, WARNING, ERROR};
-
-
-    static const char* level2str(Level level) {
-        switch (level) {
-            case(DEBUG): return "DEBUG";
-            case(INFO): return "INFO";
-            case WARNING: return "WARNING";
-            case ERROR: return "ERROR";
-        }
-        return "UNKNOWN";
-    }
 
 public:
     Logger(): _filename("../../logs/session.log"), _file(nullptr) {}
@@ -64,6 +48,8 @@ public:
             close();
     }
 
+    enum Level {DEBUG, INFO, WARNING, ERROR};
+
     bool open(){
         if(_file) return true;
 
@@ -82,6 +68,19 @@ public:
     void log(exit_code_t exit_code, Level level, const char* fmt,  ...);
 
 
+private:
+    std::string _filename;
+    FILE* _file;
+
+    static const char* level2str(Level level) {
+        switch (level) {
+            case(DEBUG): return "DEBUG";
+            case(INFO): return "INFO";
+            case WARNING: return "WARNING";
+            case ERROR: return "ERROR";
+        }
+        return "UNKNOWN";
+    }
 };
 
 

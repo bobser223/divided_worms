@@ -18,7 +18,8 @@ add_executable(${PROJECT_NAME} ${SRC_FILES} main.cpp
         src/Logger/Logger.cpp
         include/Logger/Logger.h
         include/algorithms/Distance.h
-        src/algorithms/Distance.cpp)
+        src/algorithms/Distance.cpp
+)
 
 # If you have config headers to install or generate:
 target_include_directories(${PROJECT_NAME} PRIVATE

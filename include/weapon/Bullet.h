@@ -121,7 +121,7 @@ public:
 
     void visual_change_position(){}
 
-    exit_code_t explode(const Coordinate& hit_point); // TODO: make damage to a worm
+    static exit_code_t explode(const Coordinate& hit_point); // TODO: make damage to a worm
 };
 
 #endif //DIVIDED_WORMS_BULLET_H

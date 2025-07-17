@@ -41,7 +41,8 @@ class ClassName{};
 Використовуємо snake_case
 
 Якщо функція `void`, то вона має повертати exit_code_t
-де код відповідає за наступне
-0) загальна проблема
-1) все добре
+де код відповідає за наступне (дивитися [тут](../config/Defines.h) в розділі EXIT CODES)
+1) OK = 0
+2) BASIC_ERROR = 1
+3) AUT_OF_RANGE_ERROR = 2
 
