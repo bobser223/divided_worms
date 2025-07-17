@@ -1,8 +1,8 @@
 
 #ifndef DIVIDED_WORMS_WEAPON_H
-#define DIVIDED_WORMS_BULLET_PROTOTYPE_H
+#define DIVIDED_WORMS_WEAPON_H
 
-#include "Bullet.h"
+#include "../../include/weapon/Bullet.h"
 
 #include "../../include/physics/PhysicsEngine.h"
 
@@ -13,6 +13,9 @@ class Weapon
 {
 private:
 public:
+    Weapon() = default;
+    ~Weapon() = default;
+
     int wind; // from -4 to 4
 
     void set_start()
@@ -31,7 +34,7 @@ public:
     }
 
 
-    void rocket_launcher();
+    void rocket_launcher(Bullet& rocket_launcher);
 
 
 };

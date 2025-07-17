@@ -1,7 +1,7 @@
 // Created by Volodymyr Avvakumov on 10.07.2025.
 
-#ifndef DIVIDED_WORMS_BULLET_PROTOTYPE_H
-#define DIVIDED_WORMS_BULLET_PROTOTYPE_H
+#ifndef DIVIDED_WORMS_BULLET_H
+#define DIVIDED_WORMS_BULLET_H
 
 #include <iostream>
 #include <vector>
@@ -49,6 +49,7 @@ public:
     std::pair<float, float> current_position;
 
     Bullet() = default;
+    ~Bullet() = default;
 
     void set_type(const std::string& type)
     {
@@ -123,4 +124,4 @@ public:
     exit_code_t explode(const Coordinate& hit_point); // TODO: make damage to a worm
 };
 
-#endif //DIVIDED_WORMS_BULLET_PROTOTYPE_H
+#endif //DIVIDED_WORMS_BULLET_H
