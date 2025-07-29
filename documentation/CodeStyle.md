@@ -46,3 +46,10 @@ class ClassName{};
 2) BASIC_ERROR = 1
 3) AUT_OF_RANGE_ERROR = 2
 
+# default includes
+
+```c++
+#include "../../config/Defines.h"
+#include "../../config/Settings.h"
+```
+
