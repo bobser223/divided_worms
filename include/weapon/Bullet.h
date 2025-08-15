@@ -27,7 +27,7 @@ static constexpr std::array<std::pair<coordinate_value_t , coordinate_value_t>,4
                                                               }};
 static constexpr size_t DIRECTIONS_SIZE = DIRECTIONS.size();
 
-extern const float epsilon = 0.001f;
+inline constexpr size_t epsilon = 0.001f;
 
 
 

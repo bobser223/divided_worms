@@ -14,7 +14,7 @@
 #define DIVIDED_WORMS_DISTANCE_H
 
 
-distace_rational_t count_distance(const Coordinate& c1, const Coordinate& c2){
+inline distace_rational_t count_distance(const Coordinate& c1, const Coordinate& c2){
     return sqrt(pow(c1.x - c2.x, 2) + pow(c1.y -c2.y, 2));
 }
 

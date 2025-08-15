@@ -1,19 +1,23 @@
 
 #include "../../include/weapon/Bullet.h"
 
+int Bullet::time = 0;
+int Bullet::recoil = 0;
+int Bullet::maximal_damage = 0;
 void Bullet::change_position()
 {
+
     const auto delay = std::chrono::milliseconds(time);
 
     for (int i = 0; i < trajectory.size(); ++i) {
 
         std::this_thread::sleep_for(delay);
         current_position = trajectory[i];
-        if(danger_checker())
-        {
-            notifier();
+        //if(danger_checker())
+        //{
+            //notifier();
             // TODO: we have no worm yet
-        }
+        //}
     }
 
 }

@@ -30,9 +30,9 @@ int main() {
 
     auto vec = pe.count_ballistics({19, 8}, {-10,1});
 
-    for (auto[x, y]:vec){
-        std::println("{} {}", x, y);
-        gameMap[y][x] = 2;
+    for (auto &coord : vec) {
+        std::cout << coord.x << " " << coord.y << "\n";
+        gameMap[coord.y][coord.x] = 2;
     }
 
     drawMap();
