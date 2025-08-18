@@ -38,6 +38,14 @@ public:
         return OK;
     }
 
+    exit_code_t fill_amo(id_t weapon_id, size_t amo_cnt){
+        if (weapon_id >= _available_amo.max_size()) return OUT_OF_RANGE_ERROR;
+
+        _available_amo[weapon_id] += amo_cnt;
+        return OK;
+    }
+
+
 
 
 

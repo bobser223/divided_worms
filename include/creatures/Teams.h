@@ -46,6 +46,18 @@ public:
         return OK;
     }
 
+    exit_code_t add_amo_to_team(id_t team_id, id_t weapon_id, size_t amo_cnt);
+
+    Team* team_by_id(id_t id){
+        if (!_teams_ids.contains(id)) return nullptr;
+
+        for (auto& team: _teams){
+            if (team.get_id() == id) return &team;
+        }
+
+        return nullptr;
+    }
+
 };
 
 

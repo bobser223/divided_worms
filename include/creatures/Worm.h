@@ -24,11 +24,12 @@ private:
     id_t _id;
     // Static counter shared by all Worms:
     static id_t _next_id;
+    Coordinate _position;
 public:
 
-    Worm();
+    Worm() = default;
 
-    explicit Worm(hp_t hp = 100, id_t id = ++_next_id);
+    explicit Worm(Coordinate position, hp_t hp = 100, id_t id = ++_next_id);
 
     ~Worm() = default;
 

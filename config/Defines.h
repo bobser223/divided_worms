@@ -36,6 +36,7 @@ using exit_code_t = short;
 #define OUT_OF_RANGE_ERROR 2
 #define LOGIC_OVERFLOW 3
 #define WRONG_INCOME 4
+#define NOT_FOUND_ERROR 5
 
 
 #endif //DIVIDED_WORMS_DEFINES_H
